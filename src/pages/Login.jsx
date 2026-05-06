@@ -88,7 +88,6 @@ export default function Login() {
         <section className="auth-main">
           <form className="form-card" onSubmit={handleSubmit}>
             <div className="form-stamp">ENTRAR</div>
-            <div className="form-num">// FORM-001 / V.26</div>
 
             <h2 className="form-title">INICIÁ<br />SESIÓN</h2>
             <p className="form-sub">// USÁ TU EMAIL DE SIEMPRE</p>

@@ -117,7 +117,6 @@ export default function Register() {
         <section className="auth-main">
           <form className="form-card" onSubmit={handleSubmit}>
             <div className="form-stamp">REGISTRO</div>
-            <div className="form-num">// FORM-002 / V.26</div>
 
             <h2 className="form-title">CREÁ TU<br /><span className="yellow-bg">CUENTA</span></h2>
             <p className="form-sub">// 3 CAMPOS Y ESTÁS ADENTRO</p>
