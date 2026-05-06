@@ -1,20 +1,16 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import ProductGrid from './components/ProductGrid'
-import FeaturedStores from './components/FeaturedStores'
-import Plans from './components/Plans'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 export default function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <ProductGrid />
-      <FeaturedStores />
-      <Plans />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

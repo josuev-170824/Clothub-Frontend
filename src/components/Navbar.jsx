@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -9,12 +10,12 @@ export default function Navbar() {
     <>
       <header className="nav">
         <div className="wrap nav-inner">
-          <div className="brand">
+          <Link to="/" className="brand">
             <div className="brand-stamp">CLOTHUB</div>
             <div className="brand-sub">
               EST. 2026{'\n'}SAN CARLOS · CR · <b>🇨🇷</b>
             </div>
-          </div>
+          </Link>
 
           <nav className="nav-links">
             <a href="#mercado">MERCADO</a>
@@ -24,8 +25,8 @@ export default function Navbar() {
           </nav>
 
           <div className="nav-cta">
-            <button className="btn">ENTRAR</button>
-            <button className="btn btn-yellow">ABRIR MI TIENDA →</button>
+            <Link to="/login" className="btn">ENTRAR</Link>
+            <Link to="/register" className="btn btn-yellow">REGISTRARSE →</Link>
           </div>
 
           <button
@@ -44,8 +45,8 @@ export default function Navbar() {
         <a href="#planes"  onClick={close}>PLANES</a>
         <a href="#"        onClick={close}>VENDER</a>
         <div className="mobile-cta">
-          <button className="btn"          onClick={close}>ENTRAR</button>
-          <button className="btn btn-yellow" onClick={close}>ABRIR MI TIENDA →</button>
+          <Link to="/login"    className="btn"           onClick={close}>ENTRAR</Link>
+          <Link to="/register" className="btn btn-yellow" onClick={close}>REGISTRARSE →</Link>
         </div>
       </div>
     </>
