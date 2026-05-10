@@ -49,7 +49,7 @@ export default function Register() {
         const data = await res.json().catch(() => ({}))
         throw new Error(data.message ?? 'No se pudo crear la cuenta.')
       }
-      navigate('/login')
+      navigate(`/verify-email?email=${encodeURIComponent(form.email)}`)
     } catch (err) {
       setError(err.message)
     } finally {
