@@ -1,16 +1,18 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import './auth.css'
 
 const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:5147'
 
 export default function Login() {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const [email, setEmail]       = useState('')
   const [password, setPassword] = useState('')
   const [showPw, setShowPw]     = useState(false)
   const [loading, setLoading]   = useState(false)
   const [error, setError]       = useState('')
+  const resetOk = searchParams.get('reset') === 'ok'
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -92,6 +94,7 @@ export default function Login() {
             <h2 className="form-title">INICIÁ<br />SESIÓN</h2>
             <p className="form-sub">// USÁ TU EMAIL DE SIEMPRE</p>
 
+            {resetOk && <div className="form-success">¡Contraseña actualizada! Ya podés iniciar sesión.</div>}
             {error && <div className="form-error">{error}</div>}
 
             <div className="field">
@@ -119,7 +122,7 @@ export default function Login() {
 
             <div className="field-row">
               <label><input type="checkbox" /> RECORDARME</label>
-              <a href="#">¿OLVIDASTE TU PASS?</a>
+              <Link to="/forgot-password">¿OLVIDASTE TU PASS?</Link>
             </div>
 
             <button type="submit" className="submit-btn" disabled={loading}>
