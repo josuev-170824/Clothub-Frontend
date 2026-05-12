@@ -101,18 +101,6 @@
   margin: 0 0 24px;
 }
 
-/* Mensaje de éxito */
-.form-success {
-  background: #2a7a2a;
-  color: var(--bone);
-  font-family: var(--type);
-  font-size: 13px;
-  line-height: 1.4;
-  padding: 12px 14px;
-  margin-bottom: 18px;
-  border: 2px solid var(--ink);
-}
-
 /* Fila de reenvío */
 .resend-row {
   display: flex;

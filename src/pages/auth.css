@@ -7,7 +7,7 @@
   font-family: var(--display); font-size: 16px; letter-spacing: 0.04em;
   color: var(--bone); padding: 10px 16px; border: 2px solid var(--bone);
   text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;
-  transition: transform .1s ease; text-decoration: none;
+  transition: transform .1s ease, box-shadow .1s ease; text-decoration: none;
 }
 .nav-back:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--red) }
 
@@ -157,6 +157,7 @@
   position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
   font-family: var(--display); font-size: 12px; letter-spacing: 0.05em;
   background: var(--ink); color: var(--bone); padding: 5px 9px; text-transform: uppercase;
+  transition: background .1s ease;
 }
 .field-pw .toggle-pw:hover { background: var(--red) }
 
@@ -196,7 +197,7 @@
 }
 .field-row input[type="checkbox"]:checked { background: var(--red); border-color: var(--red) }
 .field-row input[type="checkbox"]:checked::after { content: "✓"; color: var(--bone); font-size: 12px; font-weight: 700 }
-.field-row a { color: var(--red); text-decoration: underline; text-decoration-style: wavy; text-underline-offset: 3px }
+.field-row a { color: var(--red); text-decoration: underline; text-decoration-style: wavy; text-underline-offset: 3px; transition: color .1s ease }
 .field-row a:hover { color: var(--ink) }
 
 /* Buttons */
@@ -204,7 +205,7 @@
   width: 100%; background: var(--red); color: var(--bone);
   border: 3px solid var(--ink); font-family: var(--display);
   font-size: 26px; letter-spacing: 0.06em; padding: 18px;
-  text-transform: uppercase; transition: transform .1s ease;
+  text-transform: uppercase; transition: transform .1s ease, box-shadow .1s ease;
   box-shadow: 5px 5px 0 var(--ink);
 }
 .submit-btn:hover:not(:disabled) { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--ink) }
@@ -220,7 +221,7 @@
   width: 100%; background: var(--bone); color: var(--ink); border: 2px solid var(--ink);
   font-family: var(--display); font-size: 20px; letter-spacing: 0.04em; padding: 14px;
   text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; gap: 14px;
-  transition: transform .1s ease;
+  transition: transform .1s ease, box-shadow .1s ease, background .1s ease;
 }
 .google-btn:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); background: var(--yellow) }
 .google-icon {
@@ -237,10 +238,17 @@
   color: var(--red); font-family: var(--display); font-size: 18px;
   letter-spacing: 0.04em; text-transform: uppercase;
   text-decoration: none; border-bottom: 3px solid var(--red); padding-bottom: 1px;
+  transition: color .1s ease, border-bottom-color .1s ease;
 }
 .form-foot a:hover { color: var(--ink); border-bottom-color: var(--ink) }
 
-/* Error box */
+/* Success / Error boxes */
+.form-success {
+  background: #2a7a2a; color: var(--bone);
+  font-family: var(--type); font-size: 13px; line-height: 1.4;
+  padding: 12px 14px; margin-bottom: 18px; border: 2px solid var(--ink);
+}
+
 .form-error {
   background: var(--red); color: var(--bone);
   font-family: var(--type); font-size: 13px; line-height: 1.4;
